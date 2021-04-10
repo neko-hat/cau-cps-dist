@@ -57,7 +57,7 @@ def decrypt(cipher_text : list, pri_key : list):
     for i in cipher_text:
         plain_bytes.append((i ** pri_key[1]) % pri_key[0])
         
-    plain_text = "".join([chr(x) for x in plain_bytes])
+    plain_text = "".join([chr(x) for x in plain_bytes]
     
     return plain_text
         
