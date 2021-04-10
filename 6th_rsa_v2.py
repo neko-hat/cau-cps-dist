@@ -1,6 +1,6 @@
 
 from math import gcd
-# import math
+#import math
 
 def setting(p : int, q : int):
     n = p * q
@@ -49,7 +49,7 @@ def encrypt(plain_text : str, pub_key : list):
     return cipher_bytes
 
 def decrypt(cipher_text : list, pri_key : list):
-    # p = c^d % 
+    # p = c^d % n
     # to_list 
     plain_bytes = []
     for i in cipher_text:
