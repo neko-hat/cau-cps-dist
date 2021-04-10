@@ -1,5 +1,6 @@
-#import math
-from math import gcd 
+
+from math import gcd
+# import math
 
 def setting(p : int, q : int):
     n = p * q
@@ -8,7 +9,6 @@ def setting(p : int, q : int):
     d = find_d(phi_n, e)
 
     return n, e, d
-    
 def find_e(phi_n : int):
     e = 0
     for i in range(2, phi_n):
@@ -26,7 +26,6 @@ def find_d(phi_n, e):
         d += 1
         mod = (e * d) % phi_n
 
-    
     return d
 """
 def find_d(phi_n, e)
@@ -50,17 +49,16 @@ def encrypt(plain_text : str, pub_key : list):
     return cipher_bytes
 
 def decrypt(cipher_text : list, pri_key : list):
-    # p = c^d % n
-    # to_list
-    
+    # p = c^d % 
+    # to_list 
     plain_bytes = []
     for i in cipher_text:
         plain_bytes.append((i ** pri_key[1]) % pri_key[0])
         
-    plain_text = "".join([chr(x) for x in plain_bytes]
+    plain_text = "".join([chr(x) for x in plain_bytes])
+     
     
     return plain_text
-        
 
 if __name__=="__main__":
     p = 11
@@ -68,17 +66,17 @@ if __name__=="__main__":
     n, e, d = setting(p, q)
     pub_key = [n, e]
     pri_key = [n ,d]
-    
+
     plain = "hello world"
     cipher = encrypt(plain, pub_key)
 
     hex_list = []
-    
+
     for i in cipher:
         hex_list.append(hex(i).split("x")[-1])
-        
+
     hex_text = ("0x" + "".join(hex_list))
-    
+
     dec_plain = decrypt(cipher, pri_key)
-    
+
     print(dec_plain)
